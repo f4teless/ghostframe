@@ -159,19 +159,19 @@ const App = () => {
 
   return (
     <div
-      className={`min-h-screen bg-transparent text-white p-4 font-sans ${
+      className={`min-h-screen bg-gray-900 text-white p-4 font-sans ${
         isClickThrough ? "pointer-events-none" : ""
       }`}
     >
       <div className="max-w-4xl mx-auto">
-        <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-4 mb-6 border border-white/20 shadow-2xl">
+        <div className="bg-gray-800 rounded-2xl p-4 mb-6">
           <div className="flex items-center justify-between">
             <button
               onClick={handleRecordToggle}
-              className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg backdrop-blur-sm ${
+              className={`w-14 h-14 rounded-full flex items-center justify-center transition-all duration-300 shadow-lg ${
                 isRecording
-                  ? "bg-red-500/80 hover:bg-red-600/90 shadow-red-500/25"
-                  : "bg-blue-500/80 hover:bg-blue-600/90 shadow-blue-500/25"
+                  ? "bg-red-600 hover:bg-red-700"
+                  : "bg-blue-600 hover:bg-blue-700"
               }`}
             >
               {isRecording ? (
@@ -182,7 +182,7 @@ const App = () => {
             </button>
 
             <div className="flex flex-col items-center">
-              <div className="text-3xl font-light text-white/90 tracking-wider mb-2">
+              <div className="text-3xl font-light text-gray-200 tracking-wider mb-2">
                 {timer}
               </div>
               <div className="flex items-center justify-center space-x-2">
@@ -190,7 +190,7 @@ const App = () => {
                   onClick={() => setMode("assistant")}
                   className={`btn-mode ${
                     mode === "assistant"
-                      ? "btn-mode-active-blue"
+                      ? "btn-mode-active"
                       : "btn-mode-inactive"
                   }`}
                 >
@@ -201,7 +201,7 @@ const App = () => {
                   onClick={() => setMode("automation")}
                   className={`btn-mode ${
                     mode === "automation"
-                      ? "btn-mode-active-purple"
+                      ? "btn-mode-active"
                       : "btn-mode-inactive"
                   }`}
                 >
@@ -247,28 +247,28 @@ const App = () => {
                 }`}
               >
                 {msg.role === "ai" && (
-                  <div className="w-8 h-8 bg-blue-500/30 backdrop-blur-sm rounded-full flex items-center justify-center border border-blue-400/50 flex-shrink-0">
-                    <Bot className="w-5 h-5 text-white/90" />
+                  <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Bot className="w-5 h-5 text-white" />
                   </div>
                 )}
                 <div
                   className={`p-4 rounded-2xl max-w-2xl ${
                     msg.role === "user"
-                      ? "bg-white/10 border border-white/20"
-                      : "bg-black/20 border border-white/10"
+                      ? "bg-gray-700"
+                      : "bg-gray-800"
                   }`}
                 >
                   <div
-                    className="prose prose-invert prose-sm max-w-none text-white/80 leading-relaxed"
+                    className="prose prose-invert prose-sm max-w-none text-gray-300 leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: marked(msg.content) }}
                   />
-                  <div className="text-xs text-white/40 mt-2 text-right">
+                  <div className="text-xs text-gray-500 mt-2 text-right">
                     {new Date(msg.timestamp).toLocaleTimeString()}
                   </div>
                 </div>
                 {msg.role === "user" && (
-                  <div className="w-8 h-8 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 flex-shrink-0">
-                    <User className="w-5 h-5 text-white/90" />
+                  <div className="w-8 h-8 bg-gray-700 rounded-full flex items-center justify-center flex-shrink-0">
+                    <User className="w-5 h-5 text-white" />
                   </div>
                 )}
               </div>
@@ -276,7 +276,7 @@ const App = () => {
             <div ref={messagesEndRef} />
           </div>
           {showInput && (
-            <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-4 mt-4 border border-white/20 shadow-2xl animate-in slide-in-from-bottom-4 duration-300">
+            <div className="bg-gray-800 rounded-2xl p-4 mt-4">
               <div className="flex items-center space-x-3">
                 <input
                   type="text"

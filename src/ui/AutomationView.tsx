@@ -49,8 +49,8 @@ export const AutomationView = () => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-        <h3 className="text-lg font-medium text-white/90 mb-4">
+      <div className="bg-gray-800 rounded-2xl p-6">
+        <h3 className="text-lg font-medium text-white mb-4">
           🤖 Automation Controls
         </h3>
         <div className="space-y-4">
@@ -133,22 +133,22 @@ export const AutomationView = () => {
         </div>
       </div>
 
-      <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-        <h3 className="text-lg font-medium text-white/90 mb-4">📋 Logs</h3>
+      <div className="bg-gray-800 rounded-2xl p-6">
+        <h3 className="text-lg font-medium text-white mb-4">📋 Logs</h3>
         <div className="h-48 overflow-y-auto space-y-2 pr-2">
           {logs.length === 0 && (
-            <p className="text-sm text-white/50">No automation logs yet.</p>
+            <p className="text-sm text-gray-400">No automation logs yet.</p>
           )}
           {logs.map((log) => (
             <div
               key={log.timestamp}
               className={`text-xs p-2 rounded-md font-mono ${
                 log.type === "error"
-                  ? "bg-red-500/20 text-red-300"
-                  : "bg-white/5 text-white/70"
+                  ? "bg-red-900/50 text-red-300"
+                  : "bg-gray-700 text-gray-300"
               }`}
             >
-              <span className="mr-2 text-white/40">
+              <span className="mr-2 text-gray-500">
                 {new Date(log.timestamp).toLocaleTimeString()}
               </span>
               <span>{log.message}</span>

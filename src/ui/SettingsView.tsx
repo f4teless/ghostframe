@@ -35,13 +35,13 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
 
   return (
     <div className="space-y-6 animate-in fade-in duration-300">
-      <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-        <h3 className="text-lg font-medium text-white/90 mb-4">
+      <div className="bg-gray-800 rounded-2xl p-6">
+        <h3 className="text-lg font-medium text-white mb-4">
           🧠 AI Configuration
         </h3>
         <div className="space-y-4">
           <div className="grid grid-cols-3 items-center">
-            <label htmlFor="provider" className="text-sm text-white/70">
+            <label htmlFor="provider" className="text-sm text-gray-300">
               Provider
             </label>
             <select
@@ -57,7 +57,7 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
             </select>
           </div>
           <div className="grid grid-cols-3 items-center">
-            <label htmlFor="apiKey" className="text-sm text-white/70">
+            <label htmlFor="apiKey" className="text-sm text-gray-300">
               API Key
             </label>
             <input
@@ -73,7 +73,7 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
           <div className="grid grid-cols-3 items-start">
             <label
               htmlFor="customInstructions"
-              className="text-sm text-white/70 pt-2"
+              className="text-sm text-gray-300 pt-2"
             >
               Custom Instructions
             </label>
@@ -90,15 +90,15 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
         </div>
       </div>
 
-      <div className="bg-black/30 backdrop-blur-xl rounded-2xl p-6 border border-white/20 shadow-2xl">
-        <h3 className="text-lg font-medium text-white/90 mb-4">
+      <div className="bg-gray-800 rounded-2xl p-6">
+        <h3 className="text-lg font-medium text-white mb-4">
           ⚙️ Capture & Automation Config
         </h3>
         <div className="space-y-4">
           <div className="grid grid-cols-3 items-center">
             <label
               htmlFor="screenshotInterval"
-              className="text-sm text-white/70"
+              className="text-sm text-gray-300"
             >
               Screenshot Interval (ms)
             </label>
@@ -126,7 +126,7 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
             </div>
           </div>
           <div className="grid grid-cols-3 items-center">
-            <label htmlFor="profileType" className="text-sm text-white/70">
+            <label htmlFor="profileType" className="text-sm text-gray-300">
               Browser Profile
             </label>
             <select
@@ -146,9 +146,9 @@ export const SettingsView = ({ settings, setSettings }: SettingsViewProps) => {
       <div className="flex justify-end">
         <button
           onClick={handleSave}
-          className="bg-blue-500/90 hover:bg-blue-600/90 px-6 py-3 rounded-xl transition-all duration-200 backdrop-blur-sm border border-transparent shadow-lg text-white flex items-center space-x-2"
+          className="btn-primary"
         >
-          <Save className="w-5 h-5" />
+          <Save className="w-5 h-5 mr-2" />
           <span>Save Settings</span>
         </button>
       </div>
